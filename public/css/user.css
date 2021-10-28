@@ -10,7 +10,7 @@
 }
 
 .jumbo-1{
-    background-image: url(assets-CH3/main-bg.png);
+    background-image: url(../assets/assets-CH3/main-bg.png);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 }
 
 .jumbo-2{
-    background-image: url(assets-CH3/the-games-bg.jpg);
+    background-image: url(../assets/assets-CH3/the-games-bg.jpg);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
 }
 
 .jumbo-3{
-    background-image: url(assets-CH3/features.jpg);
+    background-image: url(../assets/assets-CH3/features.jpg);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
@@ -85,11 +85,11 @@
 
 
 .active-list{
-    list-style-image: url(assets-CH3/Ellipse-1.png);
+    list-style-image: url(../assets/assets-CH3/Ellipse-1.png);
 }
 
 .another-list{
-    list-style-image: url(assets-CH3/Ellipse.png);
+    list-style-image: url(../assets/assets-CH3/Ellipse.png);
 }
 
 .active-list{
@@ -124,7 +124,7 @@
 }
 
 .jumbo-4{
-    background-image: url(assets-CH3/requirements.png);
+    background-image: url(../assets/assets-CH3/requirements.png);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
@@ -177,7 +177,7 @@
 }
 
 .jumbo-5{
-    background-image: url(assets-CH3/top-score-bg.png);
+    background-image: url(../assets/assets-CH3/top-score-bg.png);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
@@ -220,7 +220,7 @@
 }
 
 .jumbo-6{
-    background-image: url(assets-CH3/the-games-bg2.png);
+    background-image: url(../assets/assets-CH3/the-games-bg2.png);
     background-size: cover;
     height: 150vh;
     background-repeat: no-repeat;
