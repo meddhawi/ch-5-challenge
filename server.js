@@ -34,13 +34,21 @@ app.get('/login', function(req, res){
     res.render('login')
 })
 
+//login use call file directory → use find → and then replace
 app.post('/login', function(req, res){
     const {email, password} = req.body
-    for(userinput of users){
-        if(userinput.email === email && userinput.password === password) {
+    const data = userreg.load()
+    const result = data.find(function(user){
+        if(user.email === email && user.password === password){
             return res.redirect('/game');
-          }
-    }
+
+        }
+    })
+    // for(userinput of users){
+    //     if(userinput.email === email && userinput.password === password) {
+    //         return res.redirect('/game');
+    //       }
+    // }
 })
 
 //REGISTER PAGE

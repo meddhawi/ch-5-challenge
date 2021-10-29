@@ -7,18 +7,19 @@ const load = function(){
 }
 
 //append user.json
-const saveUser = function(users){
-    fs.writeFileSync('data/user.json', JSON.stringify(users, null, 1)) 
-}
+// const saveUser = function(users){
+// }
 
 const addUser = function(user){
     const users = load();
     users.push(user);
-    saveUser(users)
+    // saveUser(users)
+    fs.writeFileSync('data/user.json', JSON.stringify(users, null, 1))
+
 }
 
 module.exports = {
     load: load,
-    saveUser: saveUser,
+    // saveUser: saveUser,
     addUser: addUser
 }
