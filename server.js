@@ -43,6 +43,8 @@ app.post('/login', function(req, res){
         if(user.email === email && user.password === password){
             return res.redirect('/game');
 
+        }else{
+            res.redirect("/")
         }
     })
 })

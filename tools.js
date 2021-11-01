@@ -23,5 +23,4 @@ module.exports = {
     load: load,
     duplicateCounter : duplicateCounter,
     addUser: addUser,
-    // addUserPublic : addUserPublic,
 }
