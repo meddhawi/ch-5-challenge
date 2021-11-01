@@ -39,15 +39,19 @@ app.get('/login', function(req, res){
 app.post('/login', function(req, res){
     const {email, password} = req.body
     const data = userreg.load('data/user.json')
-    const result = data.find(function(user){
-        if(user.email === email && user.password === password){
-            return res.redirect('/game');
-
-        }else{
-            res.redirect("/")
-        }
+    const result = data.find((user) => {
+        return user.email === email && user.password === password
     })
+    if(result){
+        return res.redirect('/game');
+    }
+    else{
+        res.status(400).json({
+            message: "wrong email or password"
+          })
+    }
 })
+
 
 //REGISTER PAGE
 app.get('/register', function(req, res){
