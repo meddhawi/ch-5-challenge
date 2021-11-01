@@ -6,6 +6,7 @@ const userreg = require('./tools')
 const fs = require('fs');
 
 
+
 // Setting template engine EJS
 app.set('view engine', 'ejs')
 
@@ -44,11 +45,6 @@ app.post('/login', function(req, res){
 
         }
     })
-    // for(userinput of users){
-    //     if(userinput.email === email && userinput.password === password) {
-    //         return res.redirect('/game');
-    //       }
-    // }
 })
 
 //REGISTER PAGE
@@ -58,9 +54,18 @@ app.get('/register', function(req, res){
  
 app.post('/register', function(req, res){
     const {email, password, username} = req.body
-    userreg.addUser({email, password, username}, 'data/user.json')
-    userreg.addUser({email, username}, 'data/user-public.json')
-    res.redirect('/login')
+    const duplicate = userreg.duplicateCounter(email, 'data/user-public.json');
+    //check if there is any duped email 
+    if(duplicate){
+        console.log("Error due to duplicated email")
+        res.redirect('/')
+    }
+    else{
+        userreg.addUser({email, password, username}, 'data/user.json')
+        userreg.addUser({email, username}, 'data/user-public.json')
+        res.redirect('/login')
+        console.log(duplicate)
+    }
 }) 
 
 

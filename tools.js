@@ -1,4 +1,5 @@
-const fs = require("fs")
+const fs = require("fs");
+const path = require("path");
 
 //open JSON file 
 const load = function(path){
@@ -12,10 +13,15 @@ const addUser = function(user, path){
     fs.writeFileSync(path, JSON.stringify(users, null, 1))
 }
 
+const duplicateCounter = function(email, path){
+    const users = load(path);
+    return users.find(user => user.email === email)
+}
+
 
 module.exports = {
     load: load,
-    // loadPublic : loadPublic,
+    duplicateCounter : duplicateCounter,
     addUser: addUser,
     // addUserPublic : addUserPublic,
 }
