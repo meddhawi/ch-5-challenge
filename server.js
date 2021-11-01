@@ -58,8 +58,8 @@ app.get('/register', function(req, res){
  
 app.post('/register', function(req, res){
     const {email, password, username} = req.body
-    userreg.addUser({email, password, username}, userreg.load())
-    userreg.addUserPublic({email, username}, userreg.loadPublic())
+    userreg.addUser({email, password, username}, 'data/user.json')
+    userreg.addUser({email, username}, 'data/user-public.json')
     res.redirect('/login')
 })
 
