@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3030;
-const users = require('./data/user.json')
+const users = require('./data/user-public.json')
 const userreg = require('./tools')
 const fs = require('fs');
 
@@ -55,11 +55,18 @@ app.post('/login', function(req, res){
 app.get('/register', function(req, res){
     res.render('register')
 })
-
+ 
 app.post('/register', function(req, res){
     const {email, password, username} = req.body
-    userreg.addUser({email, password, username})
+    userreg.addUser({email, password, username}, userreg.load())
+    userreg.addUserPublic({email, username}, userreg.loadPublic())
     res.redirect('/login')
+})
+
+
+//JSON file test
+app.get('/api/v1/users', function(req, res){
+    res.status(200).json(users);
 })
 
 app.listen(port, () => {
