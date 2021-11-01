@@ -37,7 +37,7 @@ app.get('/login', function(req, res){
 //login use call file directory → use find → and then replace
 app.post('/login', function(req, res){
     const {email, password} = req.body
-    const data = userreg.load()
+    const data = userreg.load('data/user.json')
     const result = data.find(function(user){
         if(user.email === email && user.password === password){
             return res.redirect('/game');
@@ -61,7 +61,7 @@ app.post('/register', function(req, res){
     userreg.addUser({email, password, username}, 'data/user.json')
     userreg.addUser({email, username}, 'data/user-public.json')
     res.redirect('/login')
-})
+}) 
 
 
 //JSON file test
